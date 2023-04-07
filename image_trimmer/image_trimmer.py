@@ -31,9 +31,11 @@ def crop_image(image_path, crop_template):
 
 def crop_images(input_folder, output_folder, template_name):
     name_list = []
-    # Load the crop template from YAML file
-    with open("crop_templates.yaml", "r") as f:
-        templates = yaml.safe_load(f)
+    # Define the crop templates
+    templates = {
+        "scb": {"x": 270, "y": 570, "width": 420, "height": 135},
+        "kbank": {"x": 10, "y": 385, "width": 500, "height": 140},
+    }
 
     # Check if the template exists
     if template_name not in templates:
@@ -86,7 +88,7 @@ def crop_images(input_folder, output_folder, template_name):
         f.write("\n".join(name_list))
 
 
-if __name__ == "__main__":
+def main():
     # Parse command-line arguments
     parser = argparse.ArgumentParser(description="Crop images.")
     parser.add_argument(
@@ -102,3 +104,7 @@ if __name__ == "__main__":
 
     # Crop the images
     crop_images(args.input_folder, args.output_folder, args.template)
+
+
+if __name__ == "__main__":
+    main()
