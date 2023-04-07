@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as readme_file:
 
 setup(
     name="image-trimmer",
-    version="0.0.9",
+    version="0.0.10",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[

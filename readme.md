@@ -13,7 +13,7 @@ pip install image-trimmer
 The code can be run from the command line using the following syntax:
 
 ```bash
-image_cropping -i <path to input folder> -o <path to output folder> -t <template name>
+image-trimmer -i ./path/to/folder -o ./path/to/output -t scb
 ```
 
 
