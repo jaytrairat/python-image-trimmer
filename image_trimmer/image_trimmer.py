@@ -28,7 +28,7 @@ def crop_images(input_folder, output_folder, template_name):
 
     # Check if the template exists
     if template_name not in templates:
-        print(f"Error: template '{template_name}' not found in 'crop_templates.yaml'.")
+        print(f"Error: template '{template_name}' not found, only supports: scb, kbank")
         return
 
     # Make the output folder if it doesn't exist
@@ -55,7 +55,7 @@ def crop_images(input_folder, output_folder, template_name):
         cropped_image = crop_image(image_path, templates[template_name])
 
         # Save the cropped image to the output folder
-        output_path = os.path.join(output_folder, filename)
+        output_path = os.path.join(output_folder, f"""{template_name}_{filename}""")
         cropped_image.save(output_path)
 
 
